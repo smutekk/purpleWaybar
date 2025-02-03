@@ -1,0 +1,141 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    margin-top: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    /* border-bottom: 2px solid rgba(69, 0, 255, 1); */
+    color: #ffffff;
+    padding: 20px;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: rgba(40,40,40,0);
+    border: 4px inset transparent;
+    border-radius: 9px;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+    background-color: rgba(30,30,30,0.9);
+    box-shadow: inset 0 -4px rgba(69, 0, 255, 1);
+}
+
+#workspaces button.focused {
+    background-color: rgba(40,40,40,0.9);
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#pulseaudio,
+#network,
+#tray,
+
+
+#window,
+#workspaces {
+    border: 2px inset transparent;
+    border-radius: 9px;
+    margin: 1 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+    border: 2px solid rgba(69, 0, 255, 1);
+    border-radius: 9px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right{
+    padding: 0 1px;
+    border: 2px solid rgba(69, 0, 255, 1);
+    border-radius: 9px;
+}
+
+#clock {
+    border: 2px solid rgba(69, 0, 255, 1);
+    border-radius: 9px;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: #ffffff;
+}
+
+#memory {
+
+}
+
+#pulseaudio {
+    color: #ffffff;
+}
+
+#pulseaudio.muted {
+    color: #ffffff;
+}
+
+#network {
+}
+
+#tray {
+    border: 2px solid rgba(69, 0, 255, 1);
+    border-radius: 9px;
+    background-color: rgba(30,30,30,0);
+}
+
+#tray > .passive {
+    box-shadow: inset 0 -3px transparent;
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    box-shadow: inset 0 -3px #ffffff;
+}
